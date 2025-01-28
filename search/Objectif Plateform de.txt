@@ -1,0 +1,176 @@
+Objectif : Plateform de programmation pour amelioration les evalutions dans le domaine de l'informatique
+	les principales fonctionnalités seront les suivantes:
+		- la creation d'evennements (examen, devoir...) avec un nombre maximum de participants (Cependant ils doivent etres enregistres par l'etablissement en amont).
+			 - Definir le langage de programmation
+			 - Definir la duree de l'evennement
+			 - Definir les sujets concernant chaque niveau
+			 - Definir la note (xp, point, Kb -> Mo) pour chaque exo de chaque niveau
+			 - Definir les tests pour chaque exo 
+		- Possibilités aux Participants de s'inscrire.
+		- Possibilite de donner des exercices aléatoires sur chaque niveau.
+		- Possibilités aux Superviseur de Demarrer l'evennement.
+		- Possibilite de bloquer un participant en cas de triche.
+			 	- Donner la possibilité au superviseur de valider ou non un exo selon le nombre de test verifié 
+				- Donner un rang pour chaque test (Ainsi le superviseur peut prendre en compte aussi le range et le nombre de test validé)
+				- Empecher que le participant ne puisse afficher les test.
+		- Acces pour chaque participant à une interface de commande y compris d'une interface de debuggage
+		- Possibilité de soumettre plusieurs fois apres un certain delai.
+		- Possiblite de tester plusieurs fois avec ses propres arguments apres un certain delai.
+		- (Optionel) Possibilité au participant de voir le test qui le bloque
+		- Mettre en place une centaine de test pour que le participant n'ait pas la possibilite de tricher
+		- Passage à l'epreuve suivante à chaque fois que le participant valide une epreuve
+		- Si l'utilisateur fait erreur de quitter la page son contenu doit etre sauvegarder
+		- Si l'utilisateur termine avant la fin de l'heure il doit avoir la possiblite de quitter (avec confirmation de dernier).
+		- Les seront ne seront disponibles qu'à la fin de l'heure.
+		- Afficher la note de chaque participant 
+		- Afficher une courbe definissant les resultats sur chaque utilisateurs.
+
+	
+	              ________________________________________________________________________________________________________________________
+	
+		
+
+       		- Creation d'un compte superutilisateur.
+			- Possibilite d'enregistrer des superviseurs. (dans le cas d'un etablissement par exemple);
+			- Possibilite de supprimer un superviseur.
+		- Creation d'interafce superviseur doit disposer d'une interface dans lequel il pourra:
+			- Enregistrer, mettre a jour et supprimer ses participants (l'exemple d'une classe).
+			- Creer un evennement examen ou devoir;
+			- Afficher pour le superviseur la note de chaque participant sur son interface.
+			- Afficher l'historique des evennements ainsi que les notes.
+		- Effacement automatique de l'historique des evennements et des notes à la fin de chaque année
+		
+		
+	              _____________________________________________________________________________________________________________________
+	              
+	              
+
+En periode d'examen juste en certain nombre de machines sera utilisable ainsi il seront configure de pouvoir à elles seules acceder à la plateform.
+NB: tout compte fait que le reséau necessite d'etre configure a chaque evaluation.
+
+
+- Quelles sont les problemes resolus par notre application et les améliorations apportées:
+	0 - Possibilites aux etudiants d'UVS de faire des examens pratiques.
+	1 - Reduire fortement ou meme rendre inexistante la possibilite de tricher. 
+		- Non accés aux IA grace au non-acces de la connexion.
+		- Rendre faible la possibilite de communiquer du fait des exercices aleatoires.
+	2 - Donner la possibilite aux participants de faire leur evalutations de maniere plus adequat.
+			- Eviter les evaluations sur feuilles dans le milieu informatique.
+	3 - Faciliter la correction des copies ansi que l'acces aux resultats
+	4 - transparence sur la corrections des copies (Plus de reclammations).
+	5 - Possibilites de renouveler les exos utilisant le net.
+	
+	
+	
+	
+	________________########################################################################################################################################____________
+	
+	
+	
+	
+	
+	. Objectif Général
+
+Développer une plateforme d'évaluation en ligne, accessible via un navigateur web et sous forme d'application de bureau, permettant aux établissements d'enseignement de créer et de gérer des évaluations de programmation de manière personnalisée et sécurisée.
+2. Fonctionnalités
+2.1 Plateforme Web (SaaS)
+
+    Gestion centrale:
+        Création et gestion des établissements, des professeurs et des étudiants.
+        Création, modification et suppression d'évaluations.
+        Définition des langages de programmation, des barèmes, des délais.
+        Stockage des résultats centralisés.
+        Statistiques et analyses détaillées.
+    Marketplace de modèles d'évaluations:
+        Bibliothèque de modèles préconfigurés.
+        Possibilité de partager des modèles.
+    Outils de création d'évaluations:
+        Éditeur de code personnalisable.
+        Éditeur de tests unitaires.
+        Upload de fichiers.
+    Gestion des classes et des groupes:
+        Création de classes et de groupes d'étudiants.
+        Attribution d'évaluations aux groupes.
+
+2.2 Application de bureau
+
+    Synchronisation avec la plateforme web:
+        Téléchargement des évaluations depuis la plateforme.
+        Envoi des résultats vers la plateforme.
+    Fonctionnalités hors ligne:
+        Passage des évaluations sans connexion internet.
+        Sauvegarde locale des réponses.
+    Interface utilisateur optimisée:
+        Interface adaptée aux écrans d'ordinateur, avec des raccourcis clavier et une navigation fluide.
+    Fonctionnalités spécifiques:
+        Mode plein écran pour une meilleure concentration.
+        Possibilité de personnaliser l'interface.
+
+3. Architecture technique
+
+    Plateforme web:
+        Frontend: React, Angular, Vue.js.
+        Backend: Node.js, Python (Django, Flask), Ruby on Rails.
+        Base de données: PostgreSQL, MongoDB.
+        Cloud: AWS, GCP, Azure.
+    Application de bureau:
+        Framework: Electron pour créer l'application à partir de technologies web.
+        Communication: WebSocket pour une communication en temps réel avec le serveur.
+        Base de données locale: SQLite pour stocker les données localement.
+
+4. Fonctionnalités spécifiques
+
+    Éditeur de code personnalisable:
+        Choix du thème, de la taille de la police, des raccourcis clavier.
+        Auto-complétion et coloration syntaxique.
+    Environnements d'exécution isolés:
+        Exécution du code de l'étudiant dans un environnement isolé pour éviter les conflits.
+    Tests unitaires automatisés:
+        Définition de tests unitaires pour vérifier la correction des réponses.
+    Feedback en temps réel:
+        Indication immédiate de la réussite ou de l'échec des tests.
+    Gestion des versions:
+        Mise à jour automatique de l'application de bureau.
+
+5. Sécurité et confidentialité
+
+    Authentification forte:
+        Mot de passe fort, double authentification.
+    Contrôle d'accès:
+        Gestion fine des permissions pour chaque utilisateur.
+    Chiffrement des données:
+        Chiffrement des données sensibles en transit et au repos.
+    Protection contre les attaques:
+        Protection contre les attaques les plus courantes (XSS, CSRF, SQL injection).
+
+6. Expérience utilisateur
+
+    Interface intuitive:
+        Design simple et clair.
+        Navigation fluide.
+    Personnalisation:
+        Possibilité de personnaliser l'interface et les raccourcis clavier.
+    Accessibilité:
+        Conformité aux normes d'accessibilité (WCAG).
+
+7. Déploiement
+
+    Plateforme web: Hébergement sur une plateforme cloud.
+    Application de bureau:
+        Distribution via un site web ou un magasin d'applications.
+        Mise à jour automatique via un système de mise à jour intégré.
+
+En résumé
+
+Cette architecture hybride offre le meilleur des deux mondes : la flexibilité et la centralisation d'un SaaS, ainsi que les avantages d'une application de bureau en termes d'expérience utilisateur et de fonctionnalités hors ligne.
+
+Les points clés à retenir:
+
+    Cohérence entre les deux versions: L'interface utilisateur et les fonctionnalités doivent être similaires pour une expérience utilisateur fluide.
+    Synchronisation des données: Les données doivent être synchronisées en temps réel entre l'application de bureau et la plateforme web.
+    Sécurité: La sécurité des données est primordiale, en particulier pour les évaluations en ligne.
+    Performance: L'application de bureau doit être optimisée pour offrir une expérience utilisateur fluide, même sur des machines moins puissantes.
+
+En suivant ces recommandations, vous pourrez développer une plateforme d'évaluation puissante, flexible et sécurisée.
+
+
