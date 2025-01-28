@@ -1,5 +1,9 @@
+# Ignore search directory
 search/
-./vscode
-./idea
 
+# Ignore editor-specific directories
+.vscode/
+.idea/
+
+# Ignore environment variables file
 .env
